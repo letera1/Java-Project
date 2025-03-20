@@ -1,2 +1,3 @@
 # Java-Project
-you can get a lot of things ........
+<img src="image.jpg" alt="Description of image">
+

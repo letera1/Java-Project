@@ -44,7 +44,7 @@ public class ChatServer extends UnicastRemoteObject implements ChatInterface {
             ChatServer server = new ChatServer();
             Registry registry = LocateRegistry.createRegistry(1099);
             registry.rebind("ChatService", server);
-            System.out.println("Chat Server is running on port 1099...");
+            System.out.println("Chat Server is Running on Port 1099......");
         } catch (Exception e) {
             System.err.println("Server exception: " + e.toString());
             e.printStackTrace();

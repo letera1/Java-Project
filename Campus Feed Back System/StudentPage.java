@@ -145,13 +145,13 @@ public class StudentPage {
             }
         } catch (SQLException e) {
             e.printStackTrace();
-            System.out.println("Error fetching teachers: " + e.getMessage());
-            teacherNames.add("Error loading teachers");
+            System.out.println("Error Fetching Teachers: " + e.getMessage());
+            teacherNames.add("Error Loading Teachers");
         }
 
         // Process the teacher names after closing the ResultSet
         if (teacherNames.isEmpty()) {
-            model.addElement("No teachers assigned");
+            model.addElement("No Teachers Assigned");
         } else {
             for (String teacherName : teacherNames) {
                 model.addElement(teacherName);

@@ -144,31 +144,31 @@ public class RegistrationPage {
             String role = (String) roleBox.getSelectedItem();
 
             if (username.isEmpty() || password.isEmpty() || name.isEmpty() || ageStr.isEmpty()) {
-                JOptionPane.showMessageDialog(frame, "All fields except Department (for Admin) are required!", "Error", JOptionPane.ERROR_MESSAGE);
+                JOptionPane.showMessageDialog(frame, "All Fields Except Department (for Admin) are Required!", "Error", JOptionPane.ERROR_MESSAGE);
                 return;
             }
             if (role.equals("Student") && (department == null || department.isEmpty())) {
-                JOptionPane.showMessageDialog(frame, "Department is required for Student role!", "Error", JOptionPane.ERROR_MESSAGE);
+                JOptionPane.showMessageDialog(frame, "Department is Required For Student Role!", "Error", JOptionPane.ERROR_MESSAGE);
                 return;
             }
 
             try {
                 int age = Integer.parseInt(ageStr);
                 if (age <= 0) {
-                    JOptionPane.showMessageDialog(frame, "Age must be a positive number!", "Error", JOptionPane.ERROR_MESSAGE);
+                    JOptionPane.showMessageDialog(frame, "Age Must be a Positive Number!", "Error", JOptionPane.ERROR_MESSAGE);
                     return;
                 }
                 if (dbHandler.registerUser(username, password, name, age, role, department)) {
-                    JOptionPane.showMessageDialog(frame, "Registration successful! You can now log in.", "Success", JOptionPane.INFORMATION_MESSAGE);
+                    JOptionPane.showMessageDialog(frame, "Registration Successful! You can now logIn.", "Success", JOptionPane.INFORMATION_MESSAGE);
                     frame.dispose();
                     new LoginPage().show();
                 } else {
-                    JOptionPane.showMessageDialog(frame, "Registration failed! Username may already exist.", "Error", JOptionPane.ERROR_MESSAGE);
+                    JOptionPane.showMessageDialog(frame, "Registration Failed! Username May Already Exist.", "Error", JOptionPane.ERROR_MESSAGE);
                 }
             } catch (NumberFormatException ex) {
-                JOptionPane.showMessageDialog(frame, "Age must be a valid number!", "Error", JOptionPane.ERROR_MESSAGE);
+                JOptionPane.showMessageDialog(frame, "Age Must be a Valid Number!", "Error", JOptionPane.ERROR_MESSAGE);
             } catch (SQLException ex) {
-                JOptionPane.showMessageDialog(frame, "Error registering user: " + ex.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
+                JOptionPane.showMessageDialog(frame, "Error Registering User: " + ex.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
             }
         });
 

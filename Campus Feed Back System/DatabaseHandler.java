@@ -27,7 +27,7 @@ public class DatabaseHandler {
             connection = DriverManager.getConnection(url, username, password);
         } catch (SQLException e) {
             e.printStackTrace();
-            JOptionPane.showMessageDialog(null, "Failed to connect to database: " + e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(null, "Failed to Connect To Database: " + e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
         }
     }
 
@@ -178,15 +178,15 @@ public class DatabaseHandler {
             int rowsAffected = stmt.executeUpdate();
 
             if (rowsAffected == 0) {
-                throw new SQLException("Failed to insert feedback: No rows affected.");
+                throw new SQLException("Failed to Insert Feedback: No Rows Affected.");
             }
 
             // Retrieve the generated id (for debugging)
             try (ResultSet generatedKeys = stmt.getGeneratedKeys()) {
                 if (generatedKeys.next()) {
-                    System.out.println("Generated feedback ID: " + generatedKeys.getInt(1));
+                    System.out.println("Generated Feedback ID: " + generatedKeys.getInt(1));
                 } else {
-                    System.out.println("No ID was generated.");
+                    System.out.println("No ID Was Generated.");
                 }
             }
         } catch (SQLException e) {

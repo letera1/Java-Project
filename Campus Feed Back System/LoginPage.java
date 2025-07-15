@@ -14,7 +14,7 @@ public class LoginPage {
     }
 
     private void initializeUI() {
-        frame = new JFrame("Login");
+        frame = new JFrame("LogIn");
         frame.setSize(400, 350);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setLayout(new GridBagLayout());
@@ -24,7 +24,7 @@ public class LoginPage {
         gbc.insets = new Insets(10, 10, 10, 10);
         gbc.anchor = GridBagConstraints.CENTER;
 
-        JLabel titleLabel = new JLabel("Login");
+        JLabel titleLabel = new JLabel("LogIn");
         titleLabel.setFont(new Font("Segoe UI", Font.BOLD, 24));
         titleLabel.setForeground(new Color(0, 120, 215));
         gbc.gridx = 0;
@@ -70,7 +70,7 @@ public class LoginPage {
         gbc.gridx = 1;
         frame.add(passField, gbc);
 
-        JButton loginButton = GUIFactory.createStyledButton("Login", new Color(50, 150, 250));
+        JButton loginButton = GUIFactory.createStyledButton("LogIn", new Color(50, 150, 250));
         gbc.gridx = 0;
         gbc.gridy = 4;
         frame.add(loginButton, gbc);
@@ -87,7 +87,7 @@ public class LoginPage {
             try {
                 if (role.equals("Admin")) {
                     if (dbHandler.authenticateAdmin(username, password)) {
-                        System.out.println("Admin login successful");
+                        System.out.println("Admin logIn successful");
                         frame.dispose();
                         new AdminPage().show();
                     } else {
@@ -103,7 +103,7 @@ public class LoginPage {
                 }
             } catch (Exception ex) {
                 ex.printStackTrace();
-                JOptionPane.showMessageDialog(frame, "Login failed: " + ex.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
+                JOptionPane.showMessageDialog(frame, "Login Failed: " + ex.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
             }
         });
 

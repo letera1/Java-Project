@@ -21,7 +21,7 @@ public class AdminPage {
     }
 
     private void initializeUI() {
-        frame = new JFrame("Admin Dashboard");
+        frame = new JFrame("Admin dashboard");
         frame.setSize(850, 650);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setLayout(new BorderLayout(20, 20));
@@ -149,7 +149,7 @@ public class AdminPage {
 
     private void refreshTeacherList() {
         if (teacherListPanel == null) {
-            System.err.println("teacherListPanel is null in refreshTeacherList");
+            System.err.println("Teacher List Panel is null in Refresh Teacher List");
             return;
         }
         teacherListPanel.removeAll();
@@ -164,8 +164,8 @@ public class AdminPage {
             }
         } catch (SQLException e) {
             e.printStackTrace();
-            JOptionPane.showMessageDialog(frame, "Error loading teachers: " + e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
-            teacherListPanel.add(new JLabel("Error loading teachers"));
+            JOptionPane.showMessageDialog(frame, "Error Loading Teachers: " + e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
+            teacherListPanel.add(new JLabel("Error Loading Teachers"));
             teacherListPanel.revalidate();
             teacherListPanel.repaint();
             return;

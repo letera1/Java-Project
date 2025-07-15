@@ -25,28 +25,28 @@ public class TaskManager
             System.out.println("2. Remove Task");
             System.out.println("3. List Tasks");
             System.out.println("4. Exit");
-            System.out.print("Select an option (1/2/3/4): ");
+            System.out.print("Select an OptionS (1/2/3/4): ");
             int choice = scanner.nextInt();
             scanner.nextLine();
 
             switch (choice)
             {
                 case 1:
-                    System.out.print("Enter task name: ");
+                    System.out.print("Enter Task Name: ");
                     String name = scanner.nextLine();
-                    System.out.print("Enter task description: ");
+                    System.out.print("Enter Task Description: ");
                     String description = scanner.nextLine();
-                    System.out.print("Enter due date: ");
+                    System.out.print("Enter Due Date: ");
                     String dueDate = scanner.nextLine();
 
                     Task newTask = new Task(name, description, dueDate);
                     taskList.add(newTask);
-                    System.out.println("Task added successfully!");
+                    System.out.println("Task added Successfully!");
                     break;
 
                 case 2:
                     if (taskList.isEmpty()) {
-                        System.out.println("No tasks to remove.");
+                        System.out.println("No Tasks to Remove.");
                     } else {
                         System.out.println("Tasks:");
                         for (int i = 0; i < taskList.size(); i++)
